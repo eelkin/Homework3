@@ -1,0 +1,98 @@
+/*
+Copyright (c) 2016 Christy Smith
+Campus Box 7915, Elon University, Elon, NC 27244
+
+Copyright (c) 2016 Evan Elkin
+Campus Box 7947, Elon University, Elon, NC 27244
+*/
+/* 
+Laptop View and style for all pages 
+*/
+body {
+  margin: 0 auto;
+  padding: 1em 1em 0;
+  width: 80%;
+}
+
+.wrapper {
+  border: 2px solid #0C1F80; 
+  border-bottom: none;
+}
+
+h1 { 
+  color: #0C1F80;   
+  font: bold 145% Arial, sans-serif;
+  margin-bottom: 1em;
+  padding: .5em .5em 0;  
+}
+
+p {
+  color: black;
+  display: inline-block;
+  font: 100% Arial, sans-serif;
+  margin-left: 2em;
+  padding-bottom: .5em;
+}
+
+label {
+  float: left;
+  font: 100% Arial, sans-serif;
+  text-align: right;
+  width: 10em;
+}
+
+input {
+  margin: 0 0 .5em .5em;
+  width: 35%;
+}
+
+span {
+  font-size: 100%;
+  margin-left: .5em;
+}
+
+br{
+    clear: both;
+}
+
+footer {
+  border: 2px solid #0C1F80;
+  padding: .25em;
+  font-size: 100%;
+}
+
+.inputField {
+  margin: 0 auto;
+  padding-bottom: .25em;
+  width: 24em;
+}
+
+.button {
+  background-color: lightgrey;
+  border: 1px solid black;
+  height: 2em;
+  margin-left: 15em;
+  width: 7em;
+}
+/*Code for mobile view across all pages*/
+@media all and (max-width: 400px) {
+  input {
+    height: 3em;
+    width: 18em;
+    margin-left: 3em; 
+  }
+  
+  .entry {
+    text-align: left;
+    margin-left: 2em;
+  }
+  
+  .button {
+    height: 3em;
+    margin-left: 3em;
+  }
+  
+  #thanksTitle {
+    font-size: 100%;
+  }  
+}
