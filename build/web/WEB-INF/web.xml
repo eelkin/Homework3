@@ -28,7 +28,6 @@ Campus Box 7947, Elon University, Elon, NC 27244
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 </web-app>

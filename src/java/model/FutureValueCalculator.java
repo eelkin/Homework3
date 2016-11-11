@@ -14,5 +14,19 @@ public class FutureValueCalculator {
       return investmentAmount * Math.pow(1 + yearlyInterestRate / 100, numberOfYears);
     }
     
+    public static double[] findFutureValues (double investmentAmount, 
+      double yearlyInterestRate, int numberOfYears) {
+        double[] values = new double[numberOfYears];
+        for(int i = 0; i < numberOfYears; i++) {
+            //values[i-1] = investmentAmount * Math.pow(1 + yearlyInterestRate / 100, i);
+            values[i] = findFutureValue(investmentAmount,yearlyInterestRate,i+1);
+        }
+        
+      return values;
+      
+    }
+    
+    
+    
 }
 

@@ -8,68 +8,69 @@ Campus Box 7947, Elon University, Elon, NC 27244
 package model;
 
 import java.io.Serializable;
-import java.text.NumberFormat;
 
 public class Calculator implements Serializable {
-  private String investmentAmount;
-  private String yearlyInterestRate;
-  private String numberOfYears;
-  private String futureValue;
+  private double investmentAmount;
+  private double yearlyInterestRate;
+  private int numberOfYears;
+  private double futureValue;
+  private double[] futureValues;
     
   public Calculator() {
-    investmentAmount = "";
-    yearlyInterestRate = "";
-    numberOfYears = "";
-    futureValue = "";
+    investmentAmount = 0;
+    yearlyInterestRate = 0;
+    numberOfYears = 0;
+    futureValue = 0;
+    futureValues = new double[numberOfYears];
   }
     
   public Calculator(double investmentAmount, double yearlyInterestRate, 
-    int numberOfYears, double futureValue) {
-    NumberFormat formatter = NumberFormat.getCurrencyInstance();
-    //formats investment amount to currency format
-    String formattedInvestmentAmount = formatter.format(investmentAmount);
-    this.investmentAmount = formattedInvestmentAmount;
-    this.yearlyInterestRate = yearlyInterestRate+"";
-    this.numberOfYears = numberOfYears+"";
-    //formats future value amount to currency format
-    String formattedFutureValue = formatter.format(futureValue);
-     this.futureValue = formattedFutureValue;
+      int numberOfYears, double futureValue) {
+      this.investmentAmount = investmentAmount;
+      this.yearlyInterestRate = yearlyInterestRate;
+      this.numberOfYears = numberOfYears;
+      this.futureValue = futureValue;
     }
     
-    public String getInvestmentAmount() {
+    public double getInvestmentAmount() {
       return investmentAmount;
     }
     
     public void setInvestmentAmount(double investmentAmount) {
-      NumberFormat formatter = NumberFormat.getCurrencyInstance();
-      String formattedAmount = formatter.format(investmentAmount);
-      this.investmentAmount = formattedAmount;
+      this.investmentAmount = investmentAmount;
     }
     
-    public String getYearlyInterestRate() {
+    public double getYearlyInterestRate() {
       return yearlyInterestRate;
     }
     
     public void setYearlyInterestRate(double yearlyInterestRate) {
-      this.yearlyInterestRate = yearlyInterestRate+"";
+      this.yearlyInterestRate = yearlyInterestRate;
     }
     
-    public String getNumberOfYears() {
+    public int getNumberOfYears() {
       return numberOfYears;
     }
     
     public void setNumberOfYears(int numberOfYears) {
-      this.numberOfYears = numberOfYears+"";
+      this.numberOfYears = numberOfYears;
     }
     
-    public String getFutureValue() {
+    public double getFutureValue() {
       return futureValue;
     }
     
     public void setFutureValue(double futureValue) {
-      NumberFormat formatter = NumberFormat.getCurrencyInstance();
-      String formattedAmount = formatter.format(futureValue);
-      this.futureValue = formattedAmount;
+      this.futureValue = futureValue;
+    }
+    
+    
+    public double[] getFutureValues() {
+      return futureValues;
+    }
+    
+    public void setFutureValues(double[] futureValues) {
+      this.futureValues = FutureValueCalculator.findFutureValues(investmentAmount, yearlyInterestRate, numberOfYears);
     }
     
 }

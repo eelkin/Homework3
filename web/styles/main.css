@@ -74,6 +74,9 @@ footer {
   margin-left: 15em;
   width: 7em;
 }
+nav{
+    display: block;
+}
 /*Code for mobile view across all pages*/
 @media all and (max-width: 400px) {
   input {
